@@ -2,6 +2,12 @@
 
 Simple mobile customizable dialog.
 
+### DEMO
+Sandbox: https://codesandbox.io/s/2h39y
+<p align="center">
+  <img src="https://media.giphy.com/media/VIW1hxFkhcAKrTx9tc/giphy.gif" style="width:227px;height:480px;">
+</p>
+
 ## Installation
 
 ### 1. Install
