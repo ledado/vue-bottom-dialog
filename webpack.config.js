@@ -1,12 +1,14 @@
+const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   mode: process.env.NODE_ENV,
-  entry: ['./src/vue-plugin.js'],
+  entry: ['./src/vue-bottom-dialog.js'],
   output: {
+    path: path.resolve('dist'),
     library: 'VuePlugin',
     libraryTarget: 'umd',
-    filename: 'vue-plugin.js',
+    filename: 'vue-bottom-dialog.js',
     globalObject: "typeof self !== 'undefined' ? self : this"
   },
   module: {
@@ -21,6 +23,13 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
       }
     ]
   },

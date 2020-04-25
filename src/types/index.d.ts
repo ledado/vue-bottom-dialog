@@ -1,5 +1,4 @@
 import Vue, { PluginFunction } from 'vue';
-// import { Store } from 'vuex';
 
 export class VueBottomDialog {
   constructor(options?: VueBottomDialogOptions);
@@ -7,9 +6,6 @@ export class VueBottomDialog {
   static install(): PluginFunction<any>;
   // static init(Vue: Vue, store: Store<any>): void;
   static init(Vue: Vue, store: any): void;
-
-  // Your instance methods
-  world(): string;
 }
 
 export interface VueBottomDialogOptions extends Object {

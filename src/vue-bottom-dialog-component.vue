@@ -144,7 +144,6 @@ export default {
 }
 .vue-bottom-dialog-overlay {
   top: 0;
-  height: 100vh;
 }
 .vue-bottom-dialog-ground {
   position: fixed;
