@@ -22,11 +22,6 @@ npm i vue-bottom-dialog --save
 import VueBottomDialog from 'vue-bottom-dialog'
 
 Vue.use(VueBottomDialog)
-
-new Vue({
-  // your vue config
-  vueBottomDialogSettings: new VueBottomDialog(),
-})
 ```
 
 ### 3. Use in your components

@@ -1,17 +1,21 @@
 <template>
   <div class="vue-bottom-dialog" :class="[value ? 'vue-bottom-dialog-overlay' : '']">
-    <v-touch
+    <div
       v-if="value"
       class="vue-bottom-dialog-ground"
       :style="{ background: overlayColor }"
-      @swipedown="closeDialog"
-      @tap="closeDialog"
-      @pandown="onPanDown"
-      @panup="onPanUp"
-      @panstart="onPanStart"
-      @panend="onPanEnd"
-      :pan-options="{ direction: 'vertical', threshold: 1 }"
-    ></v-touch>
+      @click="closeDialog"
+    >
+      <v-touch
+        :style="{ width: '100%', height: '100%' }"
+        @swipedown="closeDialog"
+        @pandown="onPanDown"
+        @panup="onPanUp"
+        @panstart="onPanStart"
+        @panend="onPanEnd"
+        :pan-options="{ direction: 'vertical', threshold: 1 }"
+      ></v-touch>
+    </div>
     <div
       class="vue-bottom-dialog-wrapper"
       :class="!drag ? 'vue-bottom-dialog-wrapper-transition' : ''"
@@ -25,7 +29,6 @@
       <v-touch
         class="vue-bottom-dialog-wrapper-touch"
         @swipedown="closeDialog"
-        @click="closeDialog"
         @pandown="onPanDown"
         @panup="onPanUp"
         @panstart="onPanStart"
@@ -43,6 +46,8 @@
 </template>
 
 <script>
+import Vue from 'vue';
+
 export default {
   props: {
     value: {
@@ -88,8 +93,9 @@ export default {
     }
   },
   methods: {
-    closeDialog() {
+    async closeDialog() {
       this.offset = 0;
+      await Vue.nextTick();
       this.$emit('input', false);
     },
     onPanDown(event) {

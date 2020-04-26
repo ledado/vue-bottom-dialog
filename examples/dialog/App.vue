@@ -8,11 +8,11 @@
           Description
         </div>
         <div>
-          <div style="padding: 8px; background: #80e27e; border-radius: 5px">Add</div>
+          <div style="padding: 8px; background: #80e27e; border-radius: 5px" @click="dialog=false">Add</div>
         </div>
       </div>
     </vue-bottom-dialog>
-    <div @click="dialog = true">open</div>
+    <div @click="openDialog">open</div>
   </div>
 </template>
 
@@ -21,6 +21,11 @@ export default {
   data: () => {
     return {
       dialog: true,
+    }
+  },
+  methods: {
+    openDialog: function() {
+      this.dialog = true;
     }
   }
 };

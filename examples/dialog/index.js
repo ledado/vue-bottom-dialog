@@ -7,6 +7,5 @@ Vue.use(VueBottomDialog);
 
 new Vue({
   el: '#app',
-  vueBottomDialogSettings: new VueBottomDialog(),
   render: createElement => createElement(App)
 });
