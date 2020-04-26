@@ -1,6 +1,6 @@
 {
   "name": "vue-bottom-dialog",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Vue Bottom Dialog",
   "author": "Andrej Lednický <lednicky.andrej@gmail.com>",
   "main": "dist/vue-bottom-dialog.js",
